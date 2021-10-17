@@ -18,18 +18,6 @@ def show_images(images, labels, shape=(3,3)):
             ax.set_title(labels[i])
             i += 1
 from tensorflow.keras.datasets import mnist
-train = 
-
-
-train_image = np.array(train.drop(['label'], axis = 1), dtype = "float32" / 255)
-train_image = train_image.reshape(-1, 28, 28, 1)
-test = np.array(test, dtype="float32") / 255
-test = test.reshape(-1, 28, 28, 1)
-
-show_images(train_image[:25], train_label[:25], shape=(5,5))
-
-train_label = tf.keras.utils.to_categorical(train['label'])
-
 
 (image_train_mnist, label_train_mnist), (image_test_mnist, label_test_mnist) = mnist.load_data()
 image_mnist = np.concatenate((image_train_mnist, image_test_mnist))
