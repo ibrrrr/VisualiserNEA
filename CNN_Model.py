@@ -20,13 +20,14 @@ def show_images(images, labels, shape=(3,3)):
             i += 1
 from tensorflow.keras.datasets import mnist
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
-
+#Splitting data set into x and y of train and test, that way overfitting is avoided.
 X_train = X_train.reshape(X_train.shape[0], 28, 28, 1) 
+#reshapes the data to fit into the parameters of the model 
 X_test = X_test.reshape(X_test.shape[0], 28, 28, 1)
 
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
-
+#greyscales the data to make it useable by our model 
 X_train/=255
 X_test/=255
 
